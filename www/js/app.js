@@ -7,6 +7,8 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic', 'ionic.cloud', 'app.controllers', 'app.routes', 'app.directives','app.services',])
 
+.constant('baseAPIUrl', 'http://vanilla.dev.htmlcms.me')
+
 .config(function($ionicConfigProvider, $sceDelegateProvider, $ionicCloudProvider){
 
   $ionicCloudProvider.init({

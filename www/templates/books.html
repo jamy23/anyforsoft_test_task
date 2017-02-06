@@ -1,9 +1,9 @@
 <ion-view title="Books" id="page1" style="">
   <ion-content padding="true" class="has-header">
     <ion-list id="books-list1" class="manual-list-fullwidth">
-      <ion-item class="item-thumbnail-left" id="books-list-item7" ui-sref="book" style="">
-        <h2>Item</h2>
-        <p style="white-space:normal;">line #2</p>
+      <ion-item class="item-thumbnail-left" id="books-list-item7" ui-sref="book({bookId: item.nid})" style="" collection-repeat="item in items">
+        <img ng-src="{{item.field_books_image}}" />
+        <h2 style="white-space:normal;" ng-bind="item.title"></h2>
       </ion-item>
     </ion-list>
   </ion-content>

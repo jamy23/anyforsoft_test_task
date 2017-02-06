@@ -1,17 +1,13 @@
 <ion-view title="Book" id="page2" style="">
   <ion-content padding="true" class="has-header">
     <div class="list card" id="book-card21">
-      <ion-item id="book-list-item11" style="">Item</ion-item>
-      <div style="margin: 0px; line-height: 250px; background-color: rgb(232, 235, 239); text-align: center;">
-        <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+      <div class="item item-text-wrap">
+        <h2 ng-bind="title"></h2>
       </div>
-      <div class="item item-body" id="book-list-item-container2" style="">
-        <div id="book-markdown2" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">Some friendly
-            <strong>markdown</strong>
-          </p>
-        </div>
+      <div class="item item-image">
+        <img ng-src="{{field_books_image}}" />
       </div>
+      <div class="item item-body" id="book-list-item-container2" style="" ng-bind-html="body"></div>
     </div>
   </ion-content>
 </ion-view>

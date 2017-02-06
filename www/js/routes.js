@@ -10,16 +10,26 @@ angular.module('app.routes', [])
     
   
 
-      .state('books', {
+  .state('books', {
     url: '/',
     templateUrl: 'templates/books.html',
-    controller: 'booksCtrl'
+    controller: 'booksCtrl',
+    resolve: {
+      books: function (Books) {
+        return Books.getList();
+      }
+    }
   })
 
   .state('book', {
-    url: '/book/',
+    url: '/book/:bookId',
     templateUrl: 'templates/book.html',
-    controller: 'bookCtrl'
+    controller: 'bookCtrl',
+    resolve: {
+      book: function ($stateParams, Books) {
+        return Books.getItem($stateParams.bookId);
+      }
+    }
   })
 
 $urlRouterProvider.otherwise('/')
